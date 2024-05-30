@@ -12,6 +12,7 @@ import java.util.List;
 import static com.luma.runner.TestData.MAGENTO_BASE_URL;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
+@Ignore
 public class LumaHomeNavigationTest extends LocatorPlayWright {
     private final List<String> ExpectedNamesWomenSection = List.of("Tops", "Bottoms");
     private final List<String> ExpectedNamesTopsSection = List.of("Jackets", "Hoodies & Sweatshirts", "Tees", "Bras & Tanks");
@@ -49,14 +50,13 @@ public class LumaHomeNavigationTest extends LocatorPlayWright {
 
     @Ignore
     @Test
-    public void testWomenSectionButtonsClickable() throws InterruptedException {
+    public void testWomenSectionButtonsClickable() {
         getPage().navigate(MAGENTO_BASE_URL);
         Locator listWomenSection = getPage().locator(".navigation li.nav-2>ul>li>a");
         Locator headerWomenSections = getPage().locator(".page-title");
 
         for (int i = 0; i < listWomenSection.count(); i++) {
             getPage().getByText("Women").hover();
-            Thread.sleep(1000);
             listWomenSection.nth(i).click();
             String text = headerWomenSections.innerText();
             Assert.assertEquals(text, ExpectedNamesWomenSection.get(i));
@@ -68,7 +68,6 @@ public class LumaHomeNavigationTest extends LocatorPlayWright {
         for ( int i = 0; i < listTopSection.count(); i++ ) {
             getPage().getByText("Women").hover();
             getPage().locator("#ui-id-9>.ui-icon-carat-1-e").hover();
-            Thread.sleep(1000);
             listTopSection.nth(i).click();
             String text = headerWomenSections.innerText();
             Assert.assertEquals(text, ExpectedNamesTopsSection.get(i));

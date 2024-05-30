@@ -1,3 +1,7 @@
+## Ecommerce Java Selenium [Allure](https://graviton-city.github.io/Automation) 
+
+[![Luma CI Tests](https://github.com/Graviton-City/Automation/actions/workflows/test-run.yml/badge.svg)](https://github.com/Graviton-City/Automation/actions/workflows/test-run.yml)
+
 ### Maven commands
 
 Validate the project is correct and all necessary information is available
