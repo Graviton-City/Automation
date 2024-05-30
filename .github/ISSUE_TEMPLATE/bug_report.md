@@ -1,46 +1,80 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: '[Affected functionality] Clear and concise summary, e.g. "[Create news] ''Publish''
-  button is not displayed on the ''Preview'' page"'
-labels: Bug
-assignees: ''
-
----
-
-**Environment:** OS, browser, it's version, device (for mobile devices).
-**Reproducible:** always, rarely, sometimes etc.
-**Build found:** last commit from https://github.com/Graviton-City/Automation
-E.g. "commit 147fa44"
-
-**Preconditions**
-A clear and concise description of actions to be done before the start of the bug reproducing (to make bug reproducing possible). E.g.:
-"Create an item in the database using SQL query:
-INSERT INTO table1 (column1, column2)
-VALUES (value1, value2);"
-
-**Steps to reproduce**
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-
-**Actual result**
-A clear and concise description of what happened (displayed, not displayed etc.)
-Attached bug screenshots or video recorded.
-
-**Expected result**
-A clear and concise description of what you expected to happen.
-Attached screenshots or mock-ups if available.
-
-**Postconditions**
-A clear and concise description of actions to be done after bug reproducing. E.g.:
-"Delete created item from database using SQL query:
-DELETE FROM table1
-WHERE id=<item1_id>;"
-
-**User story and test case links**
-E.g.: "User story #100
-[Test case](https://github.com/orgs/Graviton-City/projects/1)"
-
-**Labels to be added**
-"Bug", Priority ("pri: "), Severity ("severity:"), Type ("UI, "Functional"), "API" (for back-end bugs).
+name: "🐛 Bug Report"
+description: Create a new ticket for a bug.
+title: "🐛 [BUG] - <title>"
+labels: [
+"bug"
+]
+body:
+- type: textarea
+  id: description
+  attributes:
+  label: "Description"
+  description: Please enter an explicit description of your issue
+  placeholder: Short and explicit description of your incident...
+  validations:
+  required: true
+- type: input
+  id: reprod-url
+  attributes:
+  label: "Reproduction URL"
+  description: Please enter your GitHub URL to provide a reproduction of the issue
+  placeholder: ex. https://github.com/USERNAME/REPO-NAME
+  validations:
+  required: true
+- type: textarea
+  id: reprod
+  attributes:
+  label: "Reproduction steps"
+  description: Please enter an explicit description of your issue
+  value: |
+  1. Go to '...'
+  2. Click on '....'
+  3. Scroll down to '....'
+  4. See error
+  render: bash
+  validations:
+  required: true
+- type: textarea
+  id: screenshot
+  attributes:
+  label: "Screenshots"
+  description: If applicable, add screenshots to help explain your problem.
+  value: |
+  ![DESCRIPTION](LINK.png)
+  render: bash
+  validations:
+  required: false
+- type: textarea
+  id: logs
+  attributes:
+  label: "Logs"
+  description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+  render: bash
+  validations:
+  required: false
+- type: dropdown
+  id: browsers
+  attributes:
+  label: "Browsers"
+  description: What browsers are you seeing the problem on ?
+  multiple: true
+  options:
+  - Firefox
+  - Chrome
+  - Safari
+  - Microsoft Edge
+  - Opera
+  validations:
+  required: false
+- type: dropdown
+  id: os
+  attributes:
+  label: "OS"
+  description: What is the impacted environment ?
+  multiple: true
+  options:
+  - Windows
+  - Linux
+  - Mac
+  validations:
+  required: false
