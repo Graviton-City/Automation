@@ -57,6 +57,9 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@v1.5.0
+
       - name: Cache maven
         uses: actions/cache@v4
         with:
@@ -100,6 +103,27 @@ jobs:
             tracing/
             video/
 
+#      - name: Cache SonarCloud packages
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.sonar/cache
+#          key: ${{ runner.os }}-sonar
+#          restore-keys: ${{ runner.os }}-sonar
+
+#      - name: Build and test
+#        run: mvn test jacoco:jacoco
+##        run: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#
+#      - name: Run SonarCloud analysis
+#        run: mvn sonar:sonar -Dsonar.projectKey=Graviton-City_Automation -Dsonar.organization=graviton-city -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
       - name: Clean up gh-pages branch (optional)
         run: |
           git checkout -f gh-pages
@@ -127,7 +151,7 @@ jobs:
         if: always()
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.TOKEN }}
           publish_branch: gh-pages
           publish_dir: allure-history
 

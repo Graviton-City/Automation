@@ -4,14 +4,12 @@ import com.luma.runner.LocatorPlayWright;
 import com.luma.runner.TestData;
 import com.microsoft.playwright.Locator;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Ignore
 public class VerifyDescendingSortByPriceTest extends LocatorPlayWright {
 
     @Test()

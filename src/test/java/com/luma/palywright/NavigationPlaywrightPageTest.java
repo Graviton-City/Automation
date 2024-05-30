@@ -3,7 +3,6 @@ package com.luma.palywright;
 import com.luma.runner.LocatorPlayWright;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.regex.Pattern;
@@ -11,7 +10,6 @@ import java.util.regex.Pattern;
 import static com.luma.runner.TestData.MAGENTO_BASE_URL;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Ignore
 public class NavigationPlaywrightPageTest extends LocatorPlayWright {
 
     @Test

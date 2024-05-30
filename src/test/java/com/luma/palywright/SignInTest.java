@@ -5,13 +5,11 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.luma.runner.TestData.MAGENTO_BASE_URL;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Ignore
 public class SignInTest extends LocatorPlayWright {
     private static final Logger logger = LoggerFactory.getLogger(SignInTest.class);
 

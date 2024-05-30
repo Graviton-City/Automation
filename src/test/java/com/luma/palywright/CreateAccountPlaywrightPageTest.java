@@ -5,12 +5,10 @@ import com.luma.runner.LocatorPlayWright;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static com.luma.runner.TestData.MAGENTO_BASE_URL;
 
-@Ignore
 public class CreateAccountPlaywrightPageTest extends LocatorPlayWright {
 
     private static final Logger logger = LogManager.getLogger(CreateAccountPlaywrightPageTest.class);

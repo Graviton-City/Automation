@@ -12,7 +12,6 @@ import java.util.List;
 import static com.luma.runner.TestData.MAGENTO_BASE_URL;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
-@Ignore
 public class LumaHomeNavigationTest extends LocatorPlayWright {
     private final List<String> ExpectedNamesWomenSection = List.of("Tops", "Bottoms");
     private final List<String> ExpectedNamesTopsSection = List.of("Jackets", "Hoodies & Sweatshirts", "Tees", "Bras & Tanks");
