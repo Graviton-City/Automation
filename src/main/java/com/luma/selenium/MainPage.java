@@ -5,13 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
 public class MainPage extends BasePage {
-
     public MainPage(WebDriver driver) {
         super(driver);
         this.open();
@@ -36,7 +34,7 @@ public class MainPage extends BasePage {
     private WebElement pantsPromo;
 
     @FindBy(css = ".block-promo.home-t-shirts")
-    private WebElement tShirtsPromo;
+    private WebElement shirtsPromo;
 
     @FindBy(css = ".block-promo.home-erin")
     private WebElement erinRecommendsPromo;
@@ -190,7 +188,7 @@ public class MainPage extends BasePage {
     }
 
     public boolean isTShirtsPromoDisplayed() {
-        return tShirtsPromo.isDisplayed();
+        return shirtsPromo.isDisplayed();
     }
 
     public boolean isYogaCollectionPromoDisplayed() {
@@ -220,7 +218,7 @@ public class MainPage extends BasePage {
     public void checkHref() {
         Assert.assertEquals(yogaCollectionPromo.getAttribute("href"), BASE_URL + "/collections/yoga-new.html");
         Assert.assertEquals(pantsPromo.getAttribute("href"), BASE_URL + "/promotions/pants-all.html");
-        Assert.assertEquals(tShirtsPromo.getAttribute("href"), BASE_URL + "/promotions/tees-all.html");
+        Assert.assertEquals(shirtsPromo.getAttribute("href"), BASE_URL + "/promotions/tees-all.html");
         Assert.assertEquals(erinRecommendsPromo.getAttribute("href"), BASE_URL + "/collections/erin-recommends.html");
         Assert.assertEquals(performancePromo.getAttribute("href"), BASE_URL + "/collections/performance-fabrics.html");
         Assert.assertEquals(ecoFriendlyPromo.getAttribute("href"), BASE_URL + "/collections/eco-friendly.html");

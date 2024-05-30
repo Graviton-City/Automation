@@ -3,11 +3,9 @@ package com.luma.selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.util.List;
 
 public class ProductPage extends BasePage {
-
     String url = "https://magento.softwaretestingboard.com/";
 
     @FindBy(css = ".swatch-option.text")

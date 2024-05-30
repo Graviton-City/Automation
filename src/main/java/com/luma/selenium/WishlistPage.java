@@ -5,11 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class WishlistPage extends BasePage {
-
     public static final String WISH_LIST_URL = "https://magento.softwaretestingboard.com/wishlist";
 
     @FindBy(className = "message-success")

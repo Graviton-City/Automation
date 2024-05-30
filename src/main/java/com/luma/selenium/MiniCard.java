@@ -48,7 +48,9 @@ public class MiniCard {
         Assert.assertEquals(action.getCssValue("color"), expectedColor, "Color not as expected!");
     }
 
-    public void checkSizeColorAndProductNameAreCorrect(By seeDetailsLocator, By sizeLocator, String size, By colorLocator, String color, By nameItemLocator, String name) {
+    public void checkSizeColorAndProductNameAreCorrect(
+            By seeDetailsLocator, By sizeLocator, String size,
+            By colorLocator, String color, By nameItemLocator, String name) {
         driver.findElement(seeDetailsLocator).click();
         Assert.assertEquals(getText(sizeLocator), size, "Size not as expected!");
         Assert.assertEquals(getText(colorLocator), color, "Color not as expected!");

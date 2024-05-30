@@ -4,11 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.apache.commons.lang3.ArrayUtils;
-
 import java.util.List;
 
 public class NavBar extends BasePage {
-
     private static final String CART_URL = "https://magento.softwaretestingboard.com/checkout/cart/";
 
     @FindBy(css = "a.level-top")

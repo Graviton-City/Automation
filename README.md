@@ -1,8 +1,3 @@
-# Luma Project
-[![Luma Tests Run](https://github.com/Lokankara/Automation/actions/workflows/test-run.yml/badge.svg?branch=master)](https://github.com/Lokankara/Automation/actions/workflows/test-run.yml)
-
-[Allure Report](https://lokankara.github.io/Automation)
-
 ### Maven commands
 
 Validate the project is correct and all necessary information is available

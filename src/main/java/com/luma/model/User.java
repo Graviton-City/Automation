@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import java.util.List;
 import java.util.Locale;
 
@@ -15,10 +14,10 @@ import java.util.Locale;
 @ToString
 @EqualsAndHashCode
 public class User {
-
     public User() {
         createUser(new Faker(Locale.ENGLISH));
     }
+
     private int id;
     @JsonProperty("group_id")
     private int groupId;

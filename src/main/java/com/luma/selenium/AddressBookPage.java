@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class AddressBookPage extends BasePage {
-
     private static final String url = "https://magento.softwaretestingboard.com/customer/address/new/";
 
     public AddressBookPage(

@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import java.util.Locale;
 
 @Setter
@@ -14,7 +13,6 @@ import java.util.Locale;
 @ToString
 @EqualsAndHashCode
 public class Address {
-
     @JsonProperty("first_name")
     private String firstName;
 

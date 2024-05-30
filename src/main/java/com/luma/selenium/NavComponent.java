@@ -7,15 +7,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static com.luma.selenium.BasePage.BASE_URL;
 import static com.luma.selenium.MenPage.MEN_PAGE_URL;
 
 public class NavComponent {
-
     public NavComponent(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -140,6 +137,7 @@ public class NavComponent {
         hover(navMenBottoms);
         isActiveColor(navMenBottoms);
     }
+
     protected void isActiveColor(WebElement element) {
         Assert.assertEquals(element.getCssValue("color"), font, "Font color not as expected!");
     }

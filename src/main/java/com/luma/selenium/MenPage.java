@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class MenPage extends BasePage {
-
     public static final String MEN_PAGE_URL = BASE_URL + "/men.html";
 
     public MenPage(WebDriver driver) {

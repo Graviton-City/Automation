@@ -3,7 +3,6 @@ package com.luma.selenium;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.List;
@@ -77,8 +76,8 @@ public class CartPage extends BasePage {
     public boolean isTotalValid() {
         double discountValue = !discount.isEmpty() ? extractDouble(discount.get(0).getText()) : 0;
         double taxValue = !tax.isEmpty() ? extractDouble(tax.get(0).getText()) : 0;
-        return extractDouble(cartSubtotal.getText()) + discountValue + taxValue ==
-                extractDouble(grandTotal.getText());
+        return extractDouble(cartSubtotal.getText()) + discountValue + taxValue
+                == extractDouble(grandTotal.getText());
     }
 
     public static String extractMoneyValue(String text) {

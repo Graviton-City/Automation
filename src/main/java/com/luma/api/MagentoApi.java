@@ -1,13 +1,19 @@
 package com.luma.api;
 
-import okhttp3.*;
-
-import java.io.*;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 import java.util.Scanner;
 
 public class MagentoApi {
-
     private static final String BASE_URL = "https://magento.softwaretestingboard.com/rest/default/V1/";
     private static final String TOKEN_ENDPOINT = "integration/customer/token/";
     private static final String CUSTOMER_ENDPOINT = "customers/me";
@@ -90,7 +96,9 @@ public class MagentoApi {
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+            if (!response.isSuccessful()) {
+                throw new IOException("Unexpected code " + response);
+            }
             if (response.body() == null) {
                 throw new IOException("Response body is null");
             }

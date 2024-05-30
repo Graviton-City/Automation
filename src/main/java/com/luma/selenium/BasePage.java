@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -91,10 +90,6 @@ public abstract class BasePage {
         return new CartPage(getDriver());
     }
 
-    public void scrollTo(By locator) {
-        scrollTo(driver.findElement(locator));
-    }
-
     public double getSubtotal(By cartIconLocator, By amountPriceLocator) {
         isCartIconClickable(cartIconLocator);
         clickOnElement(cartIconLocator);
@@ -123,6 +118,11 @@ public abstract class BasePage {
                 .executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    public void scrollTo(WebElement element, boolean alignToTop) {
+        ((org.openqa.selenium.JavascriptExecutor) driver)
+                .executeScript("arguments[0].scrollIntoView(arguments[1]);", element, alignToTop);
+    }
+
     public String getInnerText(By locator) {
         return driver.findElement(locator).getAttribute("innerText");
     }
@@ -133,7 +133,9 @@ public abstract class BasePage {
                 .click();
     }
 
-    public void addProductToCartWithQty(By sizeLocator, By colorLocator, By qtyLocator, By addToCartButtonLocator, String qty) {
+    public void addProductToCartWithQty(
+            By sizeLocator, By colorLocator, By qtyLocator,
+            By addToCartButtonLocator, String qty) {
         clickOnElement(sizeLocator);
         clickOnElement(colorLocator);
         WebElement qtyElement = driver.findElement(qtyLocator);
